@@ -8,14 +8,14 @@
   "author": "Jimmy Shimizu <jimmy@shimizu.se>",
   "repository": {
     "type": "git",
-    "url": "https://github.com/jishi/node-sonos-http-api.git"
+    "url": "https://github.com/connvision/node-sonos-http-api.git"
   },
   "dependencies": {
     "async": "^1.5.0",
     "node-static": "0.7.x",
     "request-promise": "^1.0.2",
     "require-fu": "1.0.x",
-    "sonos-discovery": "https://github.com/jishi/node-sonos-discovery/archive/0.16.2.tar.gz"
+    "sonos-discovery": "https://github.com/connvision/node-sonos-discovery.git"
   },
   "engine": "node 4.x.x",
   "main": "lib/sonos-http-api.js",
