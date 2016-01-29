@@ -165,7 +165,40 @@ Preset
 
 A preset is a predefined grouping of players with predefined volumes, that will start playing whatever is in the coordinators queue.
 
-Example preset (state and uri are optional):
+Example preset with multiple zones:
+
+	{
+	  "presets":[
+	    {"players": [
+	      { "roomName": "stock2,3", "volume": 20},
+	      { "roomName": "stock4,1", "volume": 20},
+	      { "roomName": "stock4,2", "volume": 20}
+	    ],
+	    "state": "playing",
+	    "favorite": "BeautySpace Silent",
+	    "uri": "x-rincon-stream:RINCON_000E58FA8F0A01400",
+	    "playMode": "SHUFFLE",
+	    "pauseOthers": false
+	    }
+	  ,
+	   {
+	     "players": [
+	      { "roomName": "stock2,1", "volume": 35},
+	      { "roomName": "stock2,2", "volume": 35},
+	      { "roomName": "stock3,1", "volume": 35},
+	      { "roomName": "stock3,2", "volume": 35},
+	      { "roomName": "stock3,3", "volume": 35}
+	    ],
+	    "state": "playing",
+	    "favorite": "BeautySpace Loud",
+	    "uri": "x-rincon-stream:RINCON_000E58FA907E01400",
+	    "playMode": "SHUFFLE",
+	    "pauseOthers": false
+	   }
+	  ]
+	}
+
+with single zone:
 
 	{
 	  "players": [
