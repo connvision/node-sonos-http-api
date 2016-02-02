@@ -1,12 +1,19 @@
 'use strict';
 
 var http = require('http');
+var https = require('https');
+
 var SonosDiscovery = require('sonos-discovery');
 var SonosHttpAPI = require('./lib/sonos-http-api.js');
 var nodeStatic = require('node-static');
 var fs = require('fs');
 var path = require('path');
 var webroot = path.resolve(__dirname, 'static');
+
+var options = {
+  key: fs.readFileSync('key.pem'),
+  cert: fs.readFileSync('cert.pem')
+};
 
 var settings = {
   port: 5005,
@@ -39,7 +46,7 @@ var fileServer = new nodeStatic.Server(webroot);
 var discovery = new SonosDiscovery(settings);
 var api = new SonosHttpAPI(discovery, settings);
 
-var server = http.createServer(function (req, res) {
+var server = https.createServer(options, function (req, res) {
   req.addListener('end', function () {
     fileServer.serve(req, res, function (err) {
       // If error, route it.
